@@ -5,7 +5,7 @@ A Project for learing upload files using multi-chunks
 
 主框架设计结构： 
 
-MVC
+伪MVC(React并不具有一般View功能)
 
 即 Model,Views,Controller
 

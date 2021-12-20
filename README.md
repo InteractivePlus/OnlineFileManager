@@ -70,7 +70,19 @@ KV数据库可以是Redis/BuntDB
 
 首先根据固定大小切分Chunks
 
-切分算法有待考究
+切片规则：根据系统TCP Window Size最大值65535Bytes为极限，但是由于gRPC，HTTP等存在损耗，所以其切片大小为65000Bytes
+
+因此，小于65000 Bytes文件不进行切片，否则一律切片上传
+
+切片计算：
+
+for (StartSize=0; StartSize < FILESIZE; StartSize+=65000) {
+....FileReader
+
+file.slice(startsize, StartSize+65000)
+}
+
+上传会在一个Service Worker中进行，确保其不阻塞网页
 
 随后进行Hash计算
 

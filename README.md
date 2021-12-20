@@ -27,9 +27,9 @@ Model: Golang
 
 ### 1.根据大小分Chunks并计算Hash，并进行顺序排序
 
-总文件Hash算法：SHA256
+**总文件Hash算法：SHA256**
 
-Chunk Hash：MurmurHash3
+**Chunk Hash：MurmurHash3**
 
 请求接口：
 

@@ -52,6 +52,9 @@ Hashes: 文件Hash，用JSON Array编码
 
 ```
 TaskID: UUID-4格式ID
+
+Status:
+成功1，失败0，CSRF错误-1
 ```
 
 接口作用：
